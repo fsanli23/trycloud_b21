@@ -1,2 +1,4 @@
-package com.trycloud.utilities;public class BrowserUtil {
+package com.trycloud.utilities;
+
+public class BrowserUtil {
 }

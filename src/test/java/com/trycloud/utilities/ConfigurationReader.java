@@ -1,2 +1,4 @@
-package com.trycloud.utilities;public class ConfigurationReader {
+package com.trycloud.utilities;
+
+public class ConfigurationReader {
 }
