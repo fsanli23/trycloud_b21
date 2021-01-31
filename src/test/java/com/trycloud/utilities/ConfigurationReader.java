@@ -20,6 +20,7 @@ public class ConfigurationReader {
 
     }
 
+    // get Property
     public static String getProperty(String keyWord) {
         return properties.getProperty(keyWord);
 
