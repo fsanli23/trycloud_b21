@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigurationReader {
-    // this is
+
     private static Properties properties = new Properties();
 
     static {
@@ -23,6 +23,7 @@ public class ConfigurationReader {
     // get Property
     public static String getProperty(String keyWord) {
         return properties.getProperty(keyWord);
+
 
     }
 
