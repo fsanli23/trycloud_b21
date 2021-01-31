@@ -14,8 +14,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
-public class WebDriverFactory {
 
+public class WebDriverFactory {
+    
 
     public static WebDriver getDriver(String browserType) {
         if (browserType.equalsIgnoreCase("chrome")) {
