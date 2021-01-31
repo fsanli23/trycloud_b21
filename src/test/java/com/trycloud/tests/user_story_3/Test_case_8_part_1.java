@@ -56,7 +56,11 @@ WebDriver driver;
 
         //5. Verify the deleted file is displayed no the page.
 
-
+        if(!deleted_files.isDisplayed()){
+            System.out.println("Verify Displayed is PASSED!");
+        }else{
+            System.out.println("Verify Displayed is FAILED!!!");
+        }
 
 
     }
