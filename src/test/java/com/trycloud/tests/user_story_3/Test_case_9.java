@@ -49,6 +49,10 @@ public class Test_case_9 {
         hiddenfiles.click();
 
         // Verify to Clicked all buttons.
+        System.out.println(settings_button.isDisplayed());
+        System.out.println(richWorkspaces.isDisplayed());
+        System.out.println(recommendations.isDisplayed());
+        System.out.println(hiddenfiles.isDisplayed());
 
     }
 
