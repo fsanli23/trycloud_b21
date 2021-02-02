@@ -32,7 +32,6 @@ public class TestCase1 {
     driver.findElement(By.id("user")).sendKeys("User21");
     driver.findElement(By.id("password")).sendKeys("Userpass123");
     driver.findElement(By.id("submit-wrapper")).click();
-
 }
 
 }
