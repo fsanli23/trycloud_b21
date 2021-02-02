@@ -7,22 +7,37 @@ package com.trycloud.tests.user_story_3;
 
 import com.google.common.base.Verify;
 import com.trycloud.utilities.BrowserUtils;
+import com.trycloud.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Test_case_9 {
 
     WebDriver driver;
 
-    @Test(description = "User should able to login")
-    public void test_1() {
+    @BeforeMethod
+    public void setupMethod() {
+        System.out.println("Launching Setup");
+        driver = WebDriverFactory.getDriver("chrome");
+        driver.get("http://qa.trycloud.net/index.php/login?clear=1");
+        driver.manage().window().maximize();
+        //    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        System.out.println("SetUp Complete!");
 
-        // Call login class
+        driver.findElement(By.id("user")).
 
-    }
+        sendKeys("User21");
+        driver.findElement(By.id("password")).
 
+        sendKeys("Userpass123");
+        driver.findElement(By.id("submit-wrapper")).
+
+        click();
+
+}
 
     @Test(description = "User can change the app setting")
     public void test_2() {
@@ -48,11 +63,11 @@ public class Test_case_9 {
         WebElement hiddenfiles = driver.findElement(By.xpath("//input[@id='showhiddenfilesToggle']"));
         hiddenfiles.click();
 
-        // Verify to Clicked all buttons.
-        System.out.println(settings_button.isDisplayed());
-        System.out.println(richWorkspaces.isDisplayed());
-        System.out.println(recommendations.isDisplayed());
-        System.out.println(hiddenfiles.isDisplayed());
+//        // Verify to Clicked all buttons.
+//        System.out.println(settings_button.isDisplayed());
+//        System.out.println(richWorkspaces.isDisplayed());
+//        System.out.println(recommendations.isDisplayed());
+//        System.out.println(hiddenfiles.isDisplayed());
 
     }
 
