@@ -26,7 +26,7 @@ WebDriver driver;
     public void test_1(){
 
 
-    // Call login class
+    
 
 
     }
@@ -55,6 +55,9 @@ WebDriver driver;
         BrowserUtils.sleep(1);
 
         //5. Verify the deleted file is displayed no the page.
+
+
+
 
 
 
