@@ -13,6 +13,7 @@ import com.trycloud.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Test_case_8_part_2 {
@@ -59,6 +60,12 @@ public class Test_case_8_part_2 {
 
         //6. Verify the comment is displayed in the comment section.
 
+        WebElement actualComment = driver.findElement(By.xpath("(//div[@class='message'])[2]"));
+
+        String actualText = actualComment.getText();
+        String expectText = "This is my first commit";
+
+        Assert.assertTrue(actualText.equals(expectText));
 
 
 
