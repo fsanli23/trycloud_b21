@@ -31,8 +31,7 @@ public class Test_case_10 {
 
         TestCase1 loginPage = new TestCase1();
 
-        loginPage.setupMethod();
-        loginPage.loginPage();
+
 
     }
 
