@@ -22,7 +22,7 @@ public class test1 {
         driver= WebDriverFactory.getDriver("chrome");
 
         //2- go to  http://qa.trycloud.net/index.php/login?clear=1
-        driver.get(" http://qa3.trycloud.net/index.php/login");
+        driver.get("http://qa2.trycloud.net/");
 
         //3-maximize the window
         driver.manage().window().maximize();
@@ -49,7 +49,7 @@ public class test1 {
         BrowserUtils.sleep(1);
 
         String actualUrl= driver.getCurrentUrl();
-        String expectedUrl= "http://qa3.trycloud.net/index.php/login";
+        String expectedUrl= "http://qa2.trycloud.net/index.php/login";
 
 
     /*    if (actualUrl.equals(expectedUrl)){
