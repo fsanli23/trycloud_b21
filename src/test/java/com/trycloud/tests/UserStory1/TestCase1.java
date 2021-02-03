@@ -1,5 +1,6 @@
 package com.trycloud.tests.UserStory1;
 
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +31,10 @@ public class TestCase1 {
     public void loginPage(){
 
     driver.findElement(By.id("user")).sendKeys("User21");
+    BrowserUtils.sleep(2);
     driver.findElement(By.id("password")).sendKeys("Userpass123");
+    BrowserUtils.sleep(2);
+
     driver.findElement(By.id("submit-wrapper")).click();
 
 }
