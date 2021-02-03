@@ -18,7 +18,7 @@ public class TestCase1 {
 
         System.out.println("Launching Setup");
         driver = WebDriverFactory.getDriver("chrome");
-        driver.get("http://qa.trycloud.net/index.php/login?clear=1");
+        driver.get("http://qa3.trycloud.net/index.php/login1");
         driver.manage().window().maximize();
         //    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         System.out.println("SetUp Complete!");
