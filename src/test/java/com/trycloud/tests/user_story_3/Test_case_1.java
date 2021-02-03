@@ -11,6 +11,7 @@ public class Test_case_1 {
 WebDriver driver;
 @BeforeClass
     public void login(){
+
     System.out.println("Launching Setup");
     driver = WebDriverFactory.getDriver("chrome");
     driver.get("http://qa.trycloud.net/index.php/login?clear=1");
