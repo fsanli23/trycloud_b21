@@ -46,7 +46,7 @@ public class Test_Case_Part2 {
         //5.Click submit button
         searchBox.submit();
 
-        //5.Click submit button
+        //5.Click submit button//
        // WebElement SubmitButton = driver.findElement(By.name(""));
        // SubmitButton.click();
 
