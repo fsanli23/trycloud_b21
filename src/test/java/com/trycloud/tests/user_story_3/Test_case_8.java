@@ -73,7 +73,6 @@ public class Test_case_8 {
     6. Verify the comment is displayed in the comment section.
     (Pre-condition: there should be at least 1 file/folder is uploaded inside files page)
      */
-
     @Test(description = "User can see details of file and can add comment")
     public void detailsFile(){
 
@@ -120,6 +119,8 @@ public class Test_case_8 {
         String expectComment = "I love you";
         Assert.assertEquals(actualComment, expectComment);
 
+        BrowserUtils.sleep(3);
+        Driver.closeDriver();
     }
 
 }
