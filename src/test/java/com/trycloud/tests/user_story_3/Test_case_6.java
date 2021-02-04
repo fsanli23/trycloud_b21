@@ -35,7 +35,7 @@ public class Test_case_6 {
         WebElement writeNameWindow= Driver.getDriver().findElement(By.xpath("//input[@id='view13-input-folder']"));
         // 4.Write a folder name
         // 5.Click submit icon
-        writeNameWindow.sendKeys("Agenda222" + Keys.ENTER);
+        writeNameWindow.sendKeys("Agenda23" + Keys.ENTER);
 
         // 6.Verify the folder is displayed on the page
         WebElement folderName=Driver.getDriver().findElement(By.xpath("//div[@class='app-sidebar-header__figure app-sidebar-header__figure--with-action']"));
