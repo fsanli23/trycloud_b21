@@ -1,6 +1,7 @@
 package com.trycloud.tests.UserStory6;
 
 import com.google.gson.internal.bind.util.ISO8601Utils;
+import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,13 +21,15 @@ public class Test_6_1 {
     public void setupMethod() {
         System.out.println("Launching Setup");
 
+      BrowserUtils.
+
         driver = WebDriverFactory.getDriver("chrome");
 
         driver.get("http://qa.trycloud.net/index.php/login?clear=1");
 
         driver.manage().window().maximize();
 
-        //    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         System.out.println("SetUp Complete!");
     }
