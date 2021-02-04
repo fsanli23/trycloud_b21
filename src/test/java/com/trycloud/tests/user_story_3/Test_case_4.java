@@ -6,10 +6,9 @@ import com.trycloud.utilities.Driver;
 import org.testng.annotations.Test;
 
 public class Test_case_4 {
+    @Test
+public void login(){
+    LoginToWebsite.loginTrycloud();
+}
 
-    public static void main(String[] args) {
-
-        LoginToWebsite.loginTrycloud();
-
-    }
 }
