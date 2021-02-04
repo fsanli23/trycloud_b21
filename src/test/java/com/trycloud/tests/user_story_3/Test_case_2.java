@@ -14,7 +14,7 @@ public class Test_case_2 {
     public void login(){
 
         driver = WebDriverFactory.getDriver("chrome");
-        driver.get("http://qa.trycloud.net/index.php/login?clear=1");
+        driver.get("http://qa3.trycloud.net/");
         driver.manage().window().maximize();
 
 
