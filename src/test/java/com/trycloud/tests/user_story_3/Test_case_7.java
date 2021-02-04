@@ -29,7 +29,7 @@ public class Test_case_7 {
 
 
         WebElement folderOnHomepage= Driver.getDriver().findElement(By.xpath("//span[@class='innernametext']"));
-        actions.doubleClick(folderOnHomepage);
+        actions.doubleClick(folderOnHomepage).perform();
         //3.Click the “+” icon on top
         WebElement plusButton= Driver.getDriver().findElement(By.xpath("//a[@class='button new']"));
         //4.Click “upload file”
@@ -38,6 +38,9 @@ public class Test_case_7 {
         WebElement uploadButton= Driver.getDriver().findElement(By.xpath("//label[@for='file_upload_start']"));
         uploadButton.sendKeys("/Users/anaganna/Desktop/Screen Shot 2021-02-04 at 10.40.23 AM.png");
         //6.Verify the file is displayed on the page
+
+
+        Driver.closeDriver();
 
 
 

@@ -40,6 +40,7 @@ public class Test_case_6 {
         // 6.Verify the folder is displayed on the page
         WebElement folderName=Driver.getDriver().findElement(By.xpath("//div[@class='app-sidebar-header__figure app-sidebar-header__figure--with-action']"));
         Assert.assertTrue(folderName.isDisplayed());
+        Driver.closeDriver();
     }
 
 

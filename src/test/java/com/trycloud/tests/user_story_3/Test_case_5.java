@@ -36,14 +36,15 @@ public class Test_case_5 {
         newFileButton.click();
         // 3.Click “upload file”
         Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-       WebElement UploadFileButton= Driver.getDriver().findElement(By.xpath("//label[@for='file_upload_start']"));
+      // WebElement UploadFileButton= Driver.getDriver().findElement(By.xpath("//label[@for='file_upload_start']"));
 
         // 4.Upload a file
         Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Driver.getDriver().findElement(By.xpath("//label[@data-action='upload']")).sendKeys(pathFile+Keys.ENTER);
 
 
 
-         UploadFileButton.sendKeys(pathFile+ Keys.ENTER);
+       //  UploadFileButton.sendKeys(pathFile+ Keys.ENTER);
 
         // 5.Verify the file is displayed on the page
 
