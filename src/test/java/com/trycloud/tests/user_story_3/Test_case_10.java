@@ -5,6 +5,7 @@ import com.trycloud.tests.UserStory1.LoginToWebsite;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -35,7 +36,7 @@ public class Test_case_10 {
         //TODO: Check the current storage usage
         WebElement beforeUploadStorage = Driver.getDriver().findElement(By.xpath("//a[@class='icon-quota svg']"));
         beforeUploadStorage.getText();
-        System.out.println("Storage usage, before upload a file: " + beforeUploadStorage.getText());
+        //System.out.println("Storage usage, before upload a file: " + beforeUploadStorage.getText());
         BrowserUtils.sleep(2);
 
         //TODO: upload a file
@@ -72,7 +73,7 @@ public class Test_case_10 {
 
         BrowserUtils.sleep(2);
 
-        String theatre = faker.shakespeare().hamletQuote();
+        String theatre = faker.gameOfThrones().house();
         WebElement writeText = Driver.getDriver().findElement(By.xpath("(//p[@class='is-empty is-editor-empty'])[2]"));
         writeText.click();
         writeText.sendKeys(theatre);
@@ -84,13 +85,18 @@ public class Test_case_10 {
 
         BrowserUtils.sleep(2);
 
-//        //TODO: Refresh the page
-//        fileIcon.click();
-//
-//        BrowserUtils.sleep(2);
+        //TODO: Refresh the page
+        Driver.getDriver().navigate().to(Driver.getDriver().getCurrentUrl());
+
+
+
+        BrowserUtils.sleep(2);
 
         //TODO: Verify the storage usage is increased
-        //String actualStorage = beforeUploadStorage.getText();
+        String actualStorage = "";
+        String expectStorage = "";
+
+        Assert.assertEquals(actualStorage,expectStorage);
 
 
 
