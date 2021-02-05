@@ -58,11 +58,9 @@ public class Test_case_10 {
 
         WebElement submitButton = Driver.getDriver().findElement(By.xpath("(//input[@class='icon-confirm'])"));
         submitButton.click();
-
         WebElement writeText = Driver.getDriver().findElement(By.xpath("(//div[@class='editor__content'])[2]"));
         writeText.click();
         writeText.sendKeys(theatre);
-
         WebElement closeIcon = Driver.getDriver().findElement(By.xpath("//div[@class='icons-menu']"));
         closeIcon.click();
 
