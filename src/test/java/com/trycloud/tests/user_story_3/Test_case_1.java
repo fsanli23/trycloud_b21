@@ -5,21 +5,19 @@ import com.trycloud.utilities.Driver;
 import com.trycloud.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Test_case_1 {
-WebDriver driver;
+
     @Test
-    public void logIn() {//log-in trycloud
+    public void verfyTitle() {//log-in trycloud and comparing actual title with expected title
         LoginToWebsite.loginTrycloud();
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("Dashboard - Trycloud QA"));
     }
 
-    @Test
-    public void verifyTitle() {//confirming
-
-        Assert.assertTrue(driver.getTitle().contains("Dashboard - Trycloud QA"));
-    }
 
 }
