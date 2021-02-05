@@ -21,15 +21,14 @@ public class Test_6_1 {
     public void setupMethod() {
         System.out.println("Launching Setup");
 
-      BrowserUtils.
-
         driver = WebDriverFactory.getDriver("chrome");
-
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://qa.trycloud.net/index.php/login?clear=1");
 
-        driver.manage().window().maximize();
-
-        //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(By.id("user")).sendKeys("User21");
+        driver.findElement(By.id("password")).sendKeys("Userpass123");
+        driver.findElement(By.id("submit-wrapper")).click();
 
         System.out.println("SetUp Complete!");
     }
@@ -37,9 +36,7 @@ public class Test_6_1 {
 
     @Test
     public void test1_verifyNotes() {
-        driver.findElement(By.id("user")).sendKeys("User21");
-        driver.findElement(By.id("password")).sendKeys("Userpass123");
-        driver.findElement(By.id("submit-wrapper")).click();
+
 
         driver.findElement(By.xpath("//a[@href='/index.php/apps/notes/']")).click();
 
