@@ -27,6 +27,8 @@ public class Test_case_8 {
     @Test(description = "User can delete some Files")
     public void DeleteFile() {
 
+
+
         LoginToWebsite.loginTrycloud();
 
         //TODO: Click the File icon on the top modules
