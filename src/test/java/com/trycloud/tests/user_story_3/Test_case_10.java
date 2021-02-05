@@ -47,36 +47,53 @@ public class Test_case_10 {
         uploadButton.click();
         BrowserUtils.sleep(1);
         chooseFile.sendKeys(path);*/
+
+
         Faker faker = new Faker();
-        String theatre = faker.shakespeare().hamletQuote();
 
         WebElement chooseFile = Driver.getDriver().findElement(By.xpath("//a[@class='button new']"));
         chooseFile.click();
 
-        WebElement newTextDocumentButton = Driver.getDriver().findElement(By.xpath("//span[@class='icon icon-filetype-text svg']"));
-        newTextDocumentButton.sendKeys("Faker Shakespeare");
+        BrowserUtils.sleep(2);
 
-        WebElement submitButton = Driver.getDriver().findElement(By.xpath("(//input[@class='icon-confirm'])"));
+        WebElement newTextDocumentButton = Driver.getDriver().findElement(By.xpath("//span[@class='icon icon-filetype-text svg']"));
+        newTextDocumentButton.click();
+
+        BrowserUtils.sleep(2);
+
+        WebElement fileName = Driver.getDriver().findElement(By.xpath("//input[@id='view13-input-file']"));
+        String fileName2 = faker.name().name();
+        fileName.sendKeys(fileName2 );
+
+        BrowserUtils.sleep(2);
+
+        WebElement submitButton = Driver.getDriver().findElement(By.xpath("//input[@class='icon-confirm']"));
         submitButton.click();
-        WebElement writeText = Driver.getDriver().findElement(By.xpath("(//div[@class='editor__content'])[2]"));
+
+        BrowserUtils.sleep(2);
+
+        String theatre = faker.shakespeare().hamletQuote();
+        WebElement writeText = Driver.getDriver().findElement(By.xpath("(//p[@class='is-empty is-editor-empty'])[2]"));
         writeText.click();
         writeText.sendKeys(theatre);
+
+        BrowserUtils.sleep(2);
+
         WebElement closeIcon = Driver.getDriver().findElement(By.xpath("//div[@class='icons-menu']"));
         closeIcon.click();
 
-
-
         BrowserUtils.sleep(2);
 
-        //TODO: Refresh the page
-        Driver.getDriver().navigate().refresh();
-        BrowserUtils.sleep(2);
+//        //TODO: Refresh the page
+//        fileIcon.click();
+//
+//        BrowserUtils.sleep(2);
 
         //TODO: Verify the storage usage is increased
-        String actualStorage = beforeUploadStorage.getText();
-        String expectStorage = null;
+        //String actualStorage = beforeUploadStorage.getText();
 
-        Assert.assertEquals(actualStorage, expectStorage);
 
+
+        Driver.closeDriver();
     }
 }
