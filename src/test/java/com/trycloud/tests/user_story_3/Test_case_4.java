@@ -42,7 +42,7 @@ public class Test_case_4 {
         WebElement removefrom = Driver.getDriver().findElement(By.xpath("//a[@class='menuitem action action-favorite permanent']"));
         removefrom.click();
 
-
+///
 
 //Driver.closeDriver();
     }
