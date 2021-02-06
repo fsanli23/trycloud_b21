@@ -16,7 +16,7 @@ public class Test_case_4 {
     //4. Verify that the file is removed from Favorites sub-module’s table.
     //(Pre-condition: there should be at least 1 file is added to favorites table)
     @Test
-    public void RemoveFromFAvorite() {
+    public void RemoveFromFAvorite() throws InterruptedException {
         LoginToWebsite.loginTrycloud();
 
         // clicking on the all file module
@@ -34,15 +34,17 @@ public class Test_case_4 {
         //clicking favorite button to add favorite
         WebElement favoriteButtonInAction = Driver.getDriver().findElement(By.xpath("//a[@data-action='Favorite']"));
         favoriteButtonInAction.click();
-
-
+        Thread.sleep(10000);
+        //clicking one more time on action
+        WebElement action2 = Driver.getDriver().findElement(By.xpath("(//a[@class='action action-menu permanent'])[1]"));
+        action2.click();
         //clicking remove from favorite list
         WebElement removefrom = Driver.getDriver().findElement(By.xpath("//a[@class='menuitem action action-favorite permanent']"));
         removefrom.click();
 
-         // going favorite to verify it is removed from favorite
 
 
+//Driver.closeDriver();
     }
 
 }
