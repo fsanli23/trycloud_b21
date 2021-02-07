@@ -20,11 +20,13 @@ public class Test_case_2 {
 //(Pre-condition: there should be at least 2 files are uploaded the page)
     @Test
     public void selectAllUploadedFiles(){
-        LoginToWebsite.loginTrycloud();
+        LoginToWebsite.loginTrycloud();//signing in
 
-        Driver.getDriver().findElement(By.xpath("(//a[@aria-label='Files'])[1]")).click();//clicking files module
+
+        //clicking files module
+        Driver.getDriver().findElement(By.xpath("(//a[@aria-label='Files'])[1]")).click();
         Driver.getDriver().findElement(By.xpath("//label[@for='select_all_files']")).click();
-
+//checking if the all files are selected
         List<WebElement>list=Driver.getDriver().findElements(By.xpath("//table[@class='list-container view-grid has-controls multiselect']//tr//td[1]"));
         for (WebElement each:list){
             if (each.isSelected()){
