@@ -27,4 +27,9 @@ public class Test1 {
         login.click();
 
         WebElement Search = driver.findElement(By.xpath("//div[@class='header-menu unified-search']"));
+        Search.click();
+        WebElement input = driver.findElement(By.xpath("//div[@class='unified-search__input-wrapper']"));
+        input.click();
+        //
+
 }}
