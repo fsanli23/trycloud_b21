@@ -57,7 +57,8 @@ public class Test_case_7 {
 
         }
 
-     Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Driver.closeDriver();
 
 
 
