@@ -1,40 +1,43 @@
 package com.trycloud.tests.user_story_3;
 
+import com.trycloud.tests.UserStory1.LoginToWebsite;
+import com.trycloud.utilities.Driver;
 import com.trycloud.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class Test_case_2 {
-
-    WebDriver driver;
-    @BeforeClass
-    public void login(){
-
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.get("http://qa.trycloud.net/index.php/login?clear=1");
-        driver.manage().window().maximize();
-
-
-
-    }
+//Test case #2 - verify users can select all the uploaded files from the page
+//1. Login as a user
+//2. Click the top left checkbox of the table
+//3. Assert all the files are selected
+//(Pre-condition: there should be at least 2 files are uploaded the page)
     @Test
-    public void loginPage(){
+    public void selectAllUploadedFiles(){
+        LoginToWebsite.loginTrycloud();//signing in
 
-        driver.findElement(By.id("user")).sendKeys("User21");
-        driver.findElement(By.id("password")).sendKeys("Userpass123");
-        driver.findElement(By.id("submit-wrapper")).click();
+
+        //clicking files module
+        Driver.getDriver().findElement(By.xpath("(//a[@aria-label='Files'])[1]")).click();
+        Driver.getDriver().findElement(By.xpath("//label[@for='select_all_files']")).click();
+//checking if the all files are selected
+        List<WebElement>list=Driver.getDriver().findElements(By.xpath("//table[@class='list-container view-grid has-controls multiselect']//tr//td[1]"));
+        for (WebElement each:list){
+            if (each.isSelected()){
+                Assert.assertTrue(each.isSelected());
+            }
+        }
+
+
+
+
     }
-@Test
-public  void allBoxesSelected() throws InterruptedException {
-
-    WebElement allbutton= driver.findElement(By.xpath("(//table//tr[1]//td[1])[1]/input"));
-    Thread.sleep(50000);
-    allbutton.click();
-
-
 
 
 }
@@ -43,4 +46,4 @@ public  void allBoxesSelected() throws InterruptedException {
 
 
 
-}
+

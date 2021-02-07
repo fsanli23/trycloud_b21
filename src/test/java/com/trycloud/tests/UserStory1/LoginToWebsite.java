@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class LoginToWebsite {
 
-
+WebDriver driver;
     public static void loginTrycloud() {
 
         //TODO: Setup the driver This code for QA3 website
