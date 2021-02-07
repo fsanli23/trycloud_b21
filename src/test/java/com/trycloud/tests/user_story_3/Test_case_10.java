@@ -73,7 +73,7 @@ public class Test_case_10 {
 
         BrowserUtils.sleep(1);
 
-        String theatre = faker.gameOfThrones().quote();
+        String theatre = faker.shakespeare().hamletQuote();
         WebElement writeText = Driver.getDriver().findElement(By.xpath("(//p[@class='is-empty is-editor-empty'])[2]"));
         writeText.click();
         writeText.sendKeys(theatre);
