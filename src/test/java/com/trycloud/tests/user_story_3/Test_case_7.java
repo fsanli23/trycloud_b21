@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Test_case_7 {
@@ -43,14 +44,20 @@ public class Test_case_7 {
         //5.Upload a file
         WebElement uploadButton= Driver.getDriver().findElement(By.xpath("//label[@for='file_upload_start']"));
         uploadButton.sendKeys("/Users/anaganna/Desktop/helloARRRtxt");
-        Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 
         //6.Verify the file is displayed on the page
-       // WebElement fileOnWeb= Driver.getDriver().findElement(By.xpath("//span[@class='nametext'][1]"));
+        List<WebElement> list = Driver.getDriver().findElements(By.xpath("//span[@class='nametext']"));
+        for (WebElement each : list) {
+            if (each.getText().equals("Readme")) {
+                Assert.assertTrue(each.getText().equals("Readme"));
+                return;
+            }
 
-       // Assert.assertTrue(fileOnWeb.isDisplayed());
-      //  Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        }
+
+     Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
 
