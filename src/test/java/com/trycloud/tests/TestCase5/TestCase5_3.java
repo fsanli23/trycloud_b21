@@ -1,6 +1,9 @@
 package com.trycloud.tests.TestCase5;
 
+import com.trycloud.tests.UserStory1.LoginToWebsite;
+import com.trycloud.utilities.Driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,34 +15,25 @@ public class TestCase5_3 {
     @Test
     public void VerifyContactList() throws InterruptedException {
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://qa3.trycloud.net/");
-        driver.manage().window().maximize();
+        LoginToWebsite.loginTrycloud();
 
-        WebElement username = driver.findElement(By.xpath("//input[@id='user']"));
-        WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
-        WebElement login = driver.findElement(By.xpath("//input[@class='login primary']"));
-
-        username.sendKeys("User21");
-        password.sendKeys("Userpass123");
-
-        login.click();
-
-        WebElement Contact = driver.findElement(By.xpath("//a[@aria-label='Contacts']"));
+        WebElement Contact = Driver.getDriver().findElement(By.xpath("//a[@aria-label='Contacts']"));
         Thread.sleep(2000);
         Contact.click();
 
-        WebElement AllContacts = driver.findElement(By.xpath("//a[@href='/index.php/apps/contacts/All%20contacts']"));
+        // WebElement AllContacts = driver.findElement(By.xpath("//div[@class='app-navigation-new']"));
+        //(By.xpath("//a[@href='/index.php/apps/contacts/All%20contacts']"));
         Thread.sleep(2000);
-        AllContacts.click();
-
-        // WebElement ContactList = driver.findElement(By.xpath(""));
-        //  Assert.assertTrue(ContactList.isDisplayed());
+        //AllContacts.click();
 
 
+
+        WebElement ContactList = Driver.getDriver().findElement(By.xpath("//div[@id='M2ZkZGZiZGEtZmIyOC00ODEzLTlhOWYtODhjMTJmYzlmOGM2fmNvbnRhY3']"));
+        Assert.assertTrue(ContactList.isDisplayed());
+        Driver.closeDriver();
     }
-}
+    }
+
 /*
 5.Story: As a user, I should be able to access to Contacts module.
 Test case #3 - verify users can see all the contact names on the contact list
