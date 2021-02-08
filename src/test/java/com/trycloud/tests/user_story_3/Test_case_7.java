@@ -6,13 +6,17 @@ import com.trycloud.utilities.ConfigurationReader;
 import com.trycloud.utilities.Driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Test_case_7 {
@@ -25,19 +29,41 @@ public class Test_case_7 {
         //2.Choose a folder from the page
         WebElement FileButton= Driver.getDriver().findElement(By.xpath("(//a[@aria-label='Files'])[1]"));
         FileButton.click();
-        Actions actions=new Actions(Driver.getDriver());
 
 
-        WebElement folderOnHomepage= Driver.getDriver().findElement(By.xpath("//span[@class='innernametext']"));
-        actions.doubleClick(folderOnHomepage);
+
+        WebElement folderOnHomepage= Driver.getDriver().findElement(By.xpath("//a[@href='/index.php/apps/files?dir=//Talk']"));
+        folderOnHomepage.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
         //3.Click the “+” icon on top
-        WebElement plusButton= Driver.getDriver().findElement(By.xpath("//a[@class='button new']"));
+       WebElement plusButton= Driver.getDriver().findElement(By.xpath("//a[@class='button new']"));
         //4.Click “upload file”
         plusButton.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         //5.Upload a file
         WebElement uploadButton= Driver.getDriver().findElement(By.xpath("//label[@for='file_upload_start']"));
-        uploadButton.sendKeys("/Users/anaganna/Desktop/Screen Shot 2021-02-04 at 10.40.23 AM.png");
+        uploadButton.sendKeys("/Users/anaganna/Desktop/helloARRRtxt");
+        Driver.getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
         //6.Verify the file is displayed on the page
+        List<WebElement> list = Driver.getDriver().findElements(By.xpath("//span[@class='nametext']"));
+        for (WebElement each : list) {
+            if (each.getText().equals("Readme")) {
+                Assert.assertTrue(each.getText().equals("Readme"));
+                return;
+            }
+
+        }
+
+        Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Driver.closeDriver();
+
+
+
+
+       // Driver.closeDriver();
 
 
 
