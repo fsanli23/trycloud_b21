@@ -1,5 +1,7 @@
 package com.trycloud.tests.TestCase5;
 
+import com.trycloud.tests.UserStory1.LoginToWebsite;
+import com.trycloud.utilities.Driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,34 +13,22 @@ public class TestCase5_1 {
 
     @Test
     public void AccessToContactsModule() throws InterruptedException {
+        LoginToWebsite.loginTrycloud();
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://qa3.trycloud.net/");
-        driver.manage().window().maximize();
-
-        WebElement username = driver.findElement(By.xpath("//input[@id='user']"));
-        WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
-        WebElement login = driver.findElement(By.xpath("//input[@class='login primary']"));
-
-        username.sendKeys("User21");
-        password.sendKeys("Userpass123");
-
-        login.click();
 
         //3- Click to Contacts
         //To be able to click, we need to locate the web element from the page
-        driver.findElement(By.xpath("//a[@aria-label='Contacts']")).click();
+        Driver.getDriver().findElement(By.xpath("//a[@aria-label='Contacts']")).click();
         //4- Verify title contains:
         //Expected: Contacts
         String expectedInTitle = "Contacts";
-        String actualTitle = driver.getTitle();
+        String actualTitle = Driver.getDriver().getTitle();
         if (actualTitle.contains(expectedInTitle)) {
             System.out.println("Title verification PASSED!");
         } else {
             System.err.println("Title verification FAILED!!!");
         }
-        driver.close();
+        Driver.getDriver().close();
     }
 
 }
