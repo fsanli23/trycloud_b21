@@ -1,4 +1,4 @@
-package com.trycloud.tests;
+package com.trycloud.tests.Userstory7;
 
 import com.trycloud.tests.UserStory1.LoginToWebsite;
 import com.trycloud.utilities.Driver;
