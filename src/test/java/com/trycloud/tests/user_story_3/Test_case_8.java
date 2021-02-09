@@ -1,8 +1,6 @@
 package com.trycloud.tests.user_story_3;
 
-import com.github.javafaker.Faker;
-import com.google.common.base.Verify;
-import com.trycloud.tests.UserStory1.LoginToWebsite;
+import com.trycloud.tests.user_story_1.LoginToWebsite;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package com.trycloud.tests.UserStory6;
+package com.trycloud.tests.user_story_6;
 
 import com.trycloud.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Test_6_2 {
+public class Test_6_1 {
 
     WebDriver driver;
 
@@ -18,30 +18,40 @@ public class Test_6_2 {
         System.out.println("Launching Setup");
 
         driver = WebDriverFactory.getDriver("chrome");
-
-        driver.get("http://qa.trycloud.net/index.php/login?clear=1");
-
         driver.manage().window().maximize();
-
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-
-        System.out.println("SetUp Complete!");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("http://qa3.trycloud.net");
 
         driver.findElement(By.id("user")).sendKeys("User21");
         driver.findElement(By.id("password")).sendKeys("Userpass123");
         driver.findElement(By.id("submit-wrapper")).click();
 
         System.out.println("SetUp Complete!");
-
     }
+
 
     @Test
-    public void verifyNotes(){
+    public void test1_verifyNotes() {
+
+
+        driver.findElement(By.xpath("//a[@href='/index.php/apps/deck/']")).click();
+
+
+
+        String actualTitle = driver.getTitle();
+        String expectedTitle = ("Deck - Trycloud QA");
+        if (actualTitle.equals(expectedTitle)) {
+            System.out.println("Title Page Confirmed!");
+        } else {
+            System.err.println("Title Confirmation Failure!");
+            System.err.println("Actual Title: " + driver.getTitle());
+        }
+
 
     }
 
 
-    @AfterMethod
+ @AfterMethod
     public void teardownMethod() {
         System.out.println("Launching Teardown");
         driver.close();
@@ -49,4 +59,14 @@ public class Test_6_2 {
 
     }
 
+
+
+
 }
+/*
+6.Story: As a user, I should be able to  access to Notes module.
+Test case #1 - verify users can access to Talks module
+1.Login as a user
+2.Click “Notes” module
+3.Verify the page tile/URL is Notes module’s tile
+ */

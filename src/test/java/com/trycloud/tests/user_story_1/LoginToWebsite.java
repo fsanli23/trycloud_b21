@@ -1,4 +1,4 @@
-package com.trycloud.tests.UserStory1;
+package com.trycloud.tests.user_story_1;
 
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.ConfigurationReader;
@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class LoginToWebsite {
 

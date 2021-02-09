@@ -1,22 +1,13 @@
 package com.trycloud.tests.user_story_3;
 
-import com.google.common.base.Verify;
-import com.trycloud.tests.UserStory1.LoginToWebsite;
-import com.trycloud.utilities.ConfigurationReader;
+import com.trycloud.tests.user_story_1.LoginToWebsite;
 import com.trycloud.utilities.Driver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Test_case_7 {
@@ -42,33 +33,33 @@ public class Test_case_7 {
         plusButton.click();
         Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         //5.Upload a file
-        WebElement uploadButton= Driver.getDriver().findElement(By.xpath("//label[@for='file_upload_start']"));
-        uploadButton.sendKeys("/Users/anaganna/Desktop/helloARRRtxt");
+        WebElement uploadButton= Driver.getDriver().findElement(By.xpath("//input[@type='file']"));
+        uploadButton.sendKeys("/Users/anaganna/Desktop/Screen Shot 2021-01-31 at 10.41.45 PM.png");
         Driver.getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 
         //6.Verify the file is displayed on the page
-        List<WebElement> list = Driver.getDriver().findElements(By.xpath("//span[@class='nametext']"));
-        for (WebElement each : list) {
-            if (each.getText().equals("Readme")) {
-                Assert.assertTrue(each.getText().equals("Readme"));
-                return;
-            }
+        WebElement file=Driver.getDriver().findElement(By.xpath("(//span[@class='innernametext'])[1]"));
+        Assert.assertTrue(file.isDisplayed());
+
+        Driver.getDriver().manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+
+        Driver.closeDriver();
 
         }
 
-        Driver.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Driver.closeDriver();
 
 
 
 
-       // Driver.closeDriver();
+
+
+
 
 
 
     }
-}
+
 /*
 
 (Pre-condition: there should be at least 1 folder is created on the filers pag
