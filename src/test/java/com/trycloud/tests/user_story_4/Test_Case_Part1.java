@@ -4,6 +4,7 @@ import com.trycloud.tests.user_story_1.LoginToWebsite;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Test_Case_Part1 {
@@ -24,12 +25,16 @@ public class Test_Case_Part1 {
 
             LoginToWebsite.loginTrycloud();
 
-            WebElement talk_button = Driver.getDriver().findElement(By.xpath(("//a[@href='http://qa.trycloud.net/index.php/apps/spreed/'])[1]")));
+            WebElement talk_button = Driver.getDriver().findElement(By.xpath(("(//a[@href='http://qa3.trycloud.net/index.php/apps/spreed/'])[1]")));
             talk_button.click();
 
             // 3.Verify the page tile is Talks module’s title
-            WebElement PageTitle = Driver.getDriver().findElement(By.xpath(("(//span)[15]")));
-            PageTitle.click();
+
+            String expectedTitle="Talk - Trycloud QA";
+            Assert.assertTrue((Driver.getDriver().getTitle()).equals(expectedTitle));
+
+
+            Driver.closeDriver();
 
         }
 
