@@ -20,7 +20,7 @@ public class Test_6_1 {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://qa.trycloud.net/index.php/login?clear=1");
+        driver.get("http://qa3.trycloud.net");
 
         driver.findElement(By.id("user")).sendKeys("User21");
         driver.findElement(By.id("password")).sendKeys("Userpass123");
@@ -34,11 +34,12 @@ public class Test_6_1 {
     public void test1_verifyNotes() {
 
 
-        driver.findElement(By.xpath("//a[@href='/index.php/apps/notes/']")).click();
+        driver.findElement(By.xpath("//a[@href='/index.php/apps/deck/']")).click();
+
 
 
         String actualTitle = driver.getTitle();
-        String expectedTitle = ("Notes - Trycloud - QA");
+        String expectedTitle = ("Deck - Trycloud - QA");
         if (actualTitle.equals(expectedTitle)) {
             System.out.println("Title Page Confirmed!");
         } else {
@@ -62,3 +63,10 @@ public class Test_6_1 {
 
 
 }
+/*
+6.Story: As a user, I should be able to  access to Notes module.
+Test case #1 - verify users can access to Talks module
+1.Login as a user
+2.Click “Notes” module
+3.Verify the page tile/URL is Notes module’s tile
+ */
