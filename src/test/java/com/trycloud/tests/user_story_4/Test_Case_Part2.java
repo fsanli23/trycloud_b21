@@ -1,15 +1,10 @@
 package com.trycloud.tests.user_story_4;
 
-import com.trycloud.tests.UserStory1.LoginToWebsite;
-import com.trycloud.tests.UserStory1.TestCase1;
-import com.trycloud.utilities.BrowserUtils;
+import com.trycloud.tests.user_story_1.LoginToWebsite;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Test_Case_Part2 {

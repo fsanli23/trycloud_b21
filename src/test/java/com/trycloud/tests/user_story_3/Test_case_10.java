@@ -1,11 +1,10 @@
 package com.trycloud.tests.user_story_3;
 
 import com.github.javafaker.Faker;
-import com.trycloud.tests.UserStory1.LoginToWebsite;
+import com.trycloud.tests.user_story_1.LoginToWebsite;
 import com.trycloud.utilities.BrowserUtils;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
