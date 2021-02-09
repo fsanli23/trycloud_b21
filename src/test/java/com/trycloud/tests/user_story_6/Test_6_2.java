@@ -19,7 +19,7 @@ public class Test_6_2 {
 
         driver = WebDriverFactory.getDriver("chrome");
 
-        driver.get("http://qa.trycloud.net/index.php/login?clear=1");
+        driver.get("http://qa3.trycloud.net");
 
         driver.manage().window().maximize();
 
@@ -38,6 +38,7 @@ public class Test_6_2 {
     @Test
     public void verifyNotes(){
 
+
     }
 
 
@@ -50,3 +51,13 @@ public class Test_6_2 {
     }
 
 }
+/*
+6.Story: As a user, I should be able to  access to Notes module.
+
+Test case #2 - verify users can send notes in the page
+1.Login as a user
+2.Click deck module
+3.Click “New Note” button
+4.Write a message/Note
+5.Verify the note is added on the note list
+ */

@@ -39,7 +39,7 @@ public class Test_6_1 {
 
 
         String actualTitle = driver.getTitle();
-        String expectedTitle = ("Deck - Trycloud - QA");
+        String expectedTitle = ("Deck - Trycloud QA");
         if (actualTitle.equals(expectedTitle)) {
             System.out.println("Title Page Confirmed!");
         } else {
