@@ -10,14 +10,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class extraTests {
-    @Test
+    @Test (dataProvider="TestData")
     public void hello(){
         System.out.println("hello world");
     }
     @DataProvider(name="TestData")
     public Object[][] getData(){
-        Object[][] data= new Object[3][2];
-        data[0][0]="User21";
+        Object[][] data= new Object[3][2]; // [[user, pass][user2,pass2][use3, pass3]]
+        data[0][0]="User21";                   // [0] [1][2]
+
+                                        // [0, 1]             [0,1]       [0,1]
         data[0][1]="Userpass123";
         data[1][0]="User111";
         data[1][1]="Userpass123";
@@ -27,20 +29,21 @@ public class extraTests {
 
         return data;
     }
+
     @Test(dataProvider = "TestData")
-    public void login(String username, String password){
+    public void login(String a, String b){
 
        Driver.getDriver().get("http://qa2.trycloud.net/");
 
         //TODO: Enter Username:
         WebElement inputUserName = Driver.getDriver().findElement(By.id("user"));
-        inputUserName.sendKeys(username);
+        inputUserName.sendKeys(a);
 
         BrowserUtils.sleep(1);  // After user name 1 second sleeping.
 
         // TODO: Enter Password:
         WebElement inputPassword = Driver.getDriver().findElement(By.id("password"));
-        inputPassword.sendKeys(password);
+        inputPassword.sendKeys(b);
 
         BrowserUtils.sleep(1);  // After user name 1 second sleeping.
 
